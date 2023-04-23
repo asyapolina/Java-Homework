@@ -6,16 +6,15 @@ public class Main {
         int start_money, years;
         String name;
         float rate, annualIncome, finish_money;
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
-            System.out.println("Enter your name:");
-            name = br.readLine();
-            System.out.println("Enter start money :");
-            start_money = Integer.parseInt(br.readLine());
-            System.out.println("Enter years for savings account :");
-            years = Integer.parseInt(br.readLine());
-            System.out.println("Enter savings account rate in percent :");
-            rate = Float.parseFloat(br.readLine());
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Enter your name, start money, years, account rate:");
+            String[] input = br.readLine().split(" ");
+            name = input[0];
+            start_money = Integer.parseInt(input[1]);
+            years = Integer.parseInt(input[2]);
+            rate = Float.parseFloat(input[3]);
+
             annualIncome = (float)start_money / 100 * rate;
             finish_money = annualIncome * years + start_money;
             System.out.println("Hello " + name + ". Your final balance: " + finish_money + " rubles.");
